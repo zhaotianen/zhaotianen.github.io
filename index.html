@@ -64,49 +64,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/10/git/" class="article-date">
-  <time datetime="2016-04-10T06:50:27.000Z" itemprop="datePublished">2016-04-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/GIT/">GIT</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/10/git/">Git使用笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">git branch 查看本地所有分支</span><br><span class="line">git status 查看当前状态</span><br><span class="line">git commit 提交</span><br><span class="line">git branch -a 查看所有的分支</span><br><span class="line">git branch -r 查看本地所有分支</span><br><span class="line">git commit -am &quot;init&quot; 提交并且加注释</span><br><span class="line">git remote add origin git@192.168.1.119:zhaotianen</span><br><span class="line">git push origin master 将文件给推到服务器上</span><br><span class="line">git remote show origin 显示远程库origin里的资源</span><br><span class="line">git push origin master:develop</span><br><span class="line">git push origin master:hb-dev 将本地库与服务器上的库进行关联</span><br><span class="line">git checkout --track origin/dev 切换到远程dev分支</span><br><span class="line">git branch -D master develop 删除本地库develop</span><br><span class="line">git checkout -b dev 建立一个新的本地分支dev</span><br><span class="line">git merge origin/dev 将分支dev与当前分支进行合并</span><br><span class="line">git checkout dev 切换到本地dev分支</span><br><span class="line">git remote show 查看远程库</span><br><span class="line">git add .</span><br><span class="line">git rm 文件名(包括路径) 从git中删除指定文件</span><br><span class="line">git clone git://github.com/schacon/grit.git 从服务器上将代码给拉下来</span><br><span class="line">git config --list 看所有用户</span><br><span class="line">git ls-files 看已经被提交的</span><br><span class="line">git rm [file name] 删除一个文件</span><br><span class="line">git commit -a 提交当前repos的所有的改变</span><br><span class="line">git add [file name] 添加一个文件到git index</span><br><span class="line">git commit -v 当你用－v参数的时候可以看commit的差异</span><br><span class="line">git commit -m &quot;This is the message describing the commit&quot; 添加commit信息</span><br><span class="line">git commit -a -a是代表add，把所有的change加到git index里然后再commit</span><br><span class="line">git commit -a -v 一般提交命令</span><br><span class="line">git log 看你commit的日志</span><br><span class="line">git diff 查看尚未暂存的更新</span><br><span class="line">git rm a.a 移除文件(从暂存区和工作区中删除)</span><br><span class="line">git rm --cached a.a 移除文件(只从暂存区中删除)</span><br><span class="line">git commit -m &quot;remove&quot; 移除文件(从Git中删除)</span><br><span class="line">git rm -f a.a 强行移除修改后文件(从暂存区和工作区中删除)</span><br><span class="line">git diff --cached 或 $ git diff --staged 查看尚未提交的更新</span><br><span class="line">git stash push 将文件给push到一个临时空间中</span><br><span class="line">git stash pop 将文件从临时空间pop下来</span><br><span class="line">git remote add origin git@github.com:username/Hello-World.git</span><br><span class="line">git push origin master 将本地项目给提交到服务器中</span><br><span class="line">git pull 本地与服务器端同步</span><br><span class="line">git push (远程仓库名) (分支名) 将本地分支推送到服务器上去。</span><br><span class="line">git push origin serverfix:awesomebranch</span><br><span class="line">git fetch 相当于是从远程获取最新版本到本地，不会自动merge</span><br><span class="line">git commit -a -m &quot;log_message&quot; (-a是提交所有改动，-m是加入log信息) 本地修改同步至服务器端 ：</span><br><span class="line">git branch branch_0.1 master 从主分支master创建branch_0.1分支</span><br><span class="line">git branch -m branch_0.1 branch_1.0 将branch_0.1重命名为branch_1.0</span><br><span class="line">git checkout branch_1.0/master 切换到branch_1.0/master分支</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://zhaotianen.cn/2016/04/10/git/" data-id="cin4mmau90000tify21yvxmts" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IntelliJ-IDEA/">IntelliJ IDEA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/04/10/hello-world/" class="article-date">
@@ -146,7 +103,50 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zhaotianen.cn/2016/04/10/hello-world/" data-id="cin4mmaug0001tify3a8bwes8" class="article-share-link">Share</a>
+      <a data-url="http://zhaotianen.cn/2016/04/10/hello-world/" data-id="cin4mnq110000twfy9skr3lyf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IntelliJ-IDEA/">IntelliJ IDEA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/10/git/" class="article-date">
+  <time datetime="2016-04-10T06:50:27.000Z" itemprop="datePublished">2016-04-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/GIT/">GIT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/10/git/">Git使用笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">git branch 查看本地所有分支</span><br><span class="line">git status 查看当前状态</span><br><span class="line">git commit 提交</span><br><span class="line">git branch -a 查看所有的分支</span><br><span class="line">git branch -r 查看本地所有分支</span><br><span class="line">git commit -am &quot;init&quot; 提交并且加注释</span><br><span class="line">git remote add origin git@192.168.1.119:zhaotianen</span><br><span class="line">git push origin master 将文件给推到服务器上</span><br><span class="line">git remote show origin 显示远程库origin里的资源</span><br><span class="line">git push origin master:develop</span><br><span class="line">git push origin master:hb-dev 将本地库与服务器上的库进行关联</span><br><span class="line">git checkout --track origin/dev 切换到远程dev分支</span><br><span class="line">git branch -D master develop 删除本地库develop</span><br><span class="line">git checkout -b dev 建立一个新的本地分支dev</span><br><span class="line">git merge origin/dev 将分支dev与当前分支进行合并</span><br><span class="line">git checkout dev 切换到本地dev分支</span><br><span class="line">git remote show 查看远程库</span><br><span class="line">git add .</span><br><span class="line">git rm 文件名(包括路径) 从git中删除指定文件</span><br><span class="line">git clone git://github.com/schacon/grit.git 从服务器上将代码给拉下来</span><br><span class="line">git config --list 看所有用户</span><br><span class="line">git ls-files 看已经被提交的</span><br><span class="line">git rm [file name] 删除一个文件</span><br><span class="line">git commit -a 提交当前repos的所有的改变</span><br><span class="line">git add [file name] 添加一个文件到git index</span><br><span class="line">git commit -v 当你用－v参数的时候可以看commit的差异</span><br><span class="line">git commit -m &quot;This is the message describing the commit&quot; 添加commit信息</span><br><span class="line">git commit -a -a是代表add，把所有的change加到git index里然后再commit</span><br><span class="line">git commit -a -v 一般提交命令</span><br><span class="line">git log 看你commit的日志</span><br><span class="line">git diff 查看尚未暂存的更新</span><br><span class="line">git rm a.a 移除文件(从暂存区和工作区中删除)</span><br><span class="line">git rm --cached a.a 移除文件(只从暂存区中删除)</span><br><span class="line">git commit -m &quot;remove&quot; 移除文件(从Git中删除)</span><br><span class="line">git rm -f a.a 强行移除修改后文件(从暂存区和工作区中删除)</span><br><span class="line">git diff --cached 或 $ git diff --staged 查看尚未提交的更新</span><br><span class="line">git stash push 将文件给push到一个临时空间中</span><br><span class="line">git stash pop 将文件从临时空间pop下来</span><br><span class="line">git remote add origin git@github.com:username/Hello-World.git</span><br><span class="line">git push origin master 将本地项目给提交到服务器中</span><br><span class="line">git pull 本地与服务器端同步</span><br><span class="line">git push (远程仓库名) (分支名) 将本地分支推送到服务器上去。</span><br><span class="line">git push origin serverfix:awesomebranch</span><br><span class="line">git fetch 相当于是从远程获取最新版本到本地，不会自动merge</span><br><span class="line">git commit -a -m &quot;log_message&quot; (-a是提交所有改动，-m是加入log信息) 本地修改同步至服务器端 ：</span><br><span class="line">git branch branch_0.1 master 从主分支master创建branch_0.1分支</span><br><span class="line">git branch -m branch_0.1 branch_1.0 将branch_0.1重命名为branch_1.0</span><br><span class="line">git checkout branch_1.0/master 切换到branch_1.0/master分支</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhaotianen.cn/2016/04/10/git/" data-id="cin4mnq190001twfyv0zoehy6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IntelliJ-IDEA/">IntelliJ IDEA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -209,11 +209,11 @@
       <ul>
         
           <li>
-            <a href="/2016/04/10/git/">Git使用笔记</a>
+            <a href="/2016/04/10/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2016/04/10/hello-world/">Hello World</a>
+            <a href="/2016/04/10/git/">Git使用笔记</a>
           </li>
         
       </ul>
