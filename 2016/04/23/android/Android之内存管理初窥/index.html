@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android之内存管理初窥 | 赵天恩博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#Android之内存管理初窥
+##0.前奏相信每个从事android开发的人员来说，都或多或少的遇到过OOM情况的，因此对于每个coder来说能够避免或者防范OOM出现确实是一门必不可少的能力。因此，接下来咱们就谈谈android平台下内存的管理之道。
+##1.概念回顾内存泄漏：指对象在内存heap堆中分配的空间，当不再适用或者没有引用指向的情况下，仍不能被GC正常回收的情况。在android平">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android之内存管理初窥">
+<meta property="og:url" content="http://zhaotianen.cn/2016/04/23/android/Android之内存管理初窥/index.html">
+<meta property="og:site_name" content="赵天恩博客">
+<meta property="og:description" content="#Android之内存管理初窥
+##0.前奏相信每个从事android开发的人员来说，都或多或少的遇到过OOM情况的，因此对于每个coder来说能够避免或者防范OOM出现确实是一门必不可少的能力。因此，接下来咱们就谈谈android平台下内存的管理之道。
+##1.概念回顾内存泄漏：指对象在内存heap堆中分配的空间，当不再适用或者没有引用指向的情况下，仍不能被GC正常回收的情况。在android平">
+<meta property="og:image" content="http://zhaotianen.cn/./1461412741168.png">
+<meta property="og:updated_time" content="2016-04-23T12:16:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android之内存管理初窥">
+<meta name="twitter:description" content="#Android之内存管理初窥
+##0.前奏相信每个从事android开发的人员来说，都或多或少的遇到过OOM情况的，因此对于每个coder来说能够避免或者防范OOM出现确实是一门必不可少的能力。因此，接下来咱们就谈谈android平台下内存的管理之道。
+##1.概念回顾内存泄漏：指对象在内存heap堆中分配的空间，当不再适用或者没有引用指向的情况下，仍不能被GC正常回收的情况。在android平">
+<meta name="twitter:image" content="http://zhaotianen.cn/./1461412741168.png">
+  
+    <link rel="alternate" href="/atom.xml" title="赵天恩博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">赵天恩博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://zhaotianen.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-android/Android之内存管理初窥" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/23/android/Android之内存管理初窥/" class="article-date">
+  <time datetime="2016-04-23T12:16:30.000Z" itemprop="datePublished">2016-04-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android之内存管理初窥
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Android之内存管理初窥</p>
+<p>##0.前奏<br>相信每个从事android开发的人员来说，都或多或少的遇到过OOM情况的，因此对于每个coder来说能够避免或者防范OOM出现确实是一门必不可少的能力。因此，接下来咱们就谈谈android平台下内存的管理之道。</p>
+<p>##1.概念回顾<br>内存泄漏：<br>指对象在内存heap堆中分配的空间，当不再适用或者没有引用指向的情况下，仍不能被GC正常回收的情况。在android平台下多数出现在代码的不合理下，通常大量的内存泄漏会造成 OOM的出现。</p>
+<p>OOM：<br>即OutOfMemoery，中文也就是内存溢出。内存溢出是指app向系统申请的超过内存最大阀值的内存请求，系统不会再分配多余的空间出来，就会造成OOM ERROR，在android平台下大多数出现在图片处理不当的时候。</p>
+<p>##2.原因分析</p>
+<ul>
+<li><strong>static</strong> ：<br>static是个好东西，声明赋值然后就可以调用，但是伴随而来的就是性能问题。由于static声明变量的生命周期和app的生命周期一样的，有点类似与application。如果大量使用，势必占剧内存空间且不释放，积少成多就会造成内存不断开销，直至挂掉。static的合理使用一般用来修饰基本数据类型或者轻量级对象，尽量避免修复集合或者大对象，常用作修饰全局配置项、工具类方法、内部类。</li>
+<li><strong>无关引用</strong>：<br>在android中很多情况下需要用到传递引用，但是无法确保引用传递出去后能否及时的回收。例如context泄露，但是很多情况下activity结束后，但是由于仍被其他的对象指向导致一直迟迟不能回收，就会导致内存泄漏。</li>
+<li><p><strong>handler</strong>：<br>在做一步操作的时候，相信很多人都会使用handler+thread方式的。handler运行在UI线程，不断处理来自消息队列的消息，如果handler还有消息需要处理，但是activity页面已经结束了，这个时候activity引用其实不会被回收，就会造成内存泄漏。解决方案一是在activity的onDestrory方法中调用handler.removeCallbackAndMessage(null)来取消所有的消息的处理，包括待处理的消息；二是声明handler的内部类为static。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line"> <span class="comment">//	  目前现状开始</span></span><br><span class="line"> <span class="comment">//   private Handler mHandler = new Handler() &#123;</span></span><br><span class="line"> <span class="comment">//       @Override</span></span><br><span class="line"> <span class="comment">//       public void handleMessage(Message msg) &#123;</span></span><br><span class="line"> <span class="comment">//       &#125;</span></span><br><span class="line"> <span class="comment">//   &#125;;</span></span><br><span class="line"> <span class="comment">//   目前现状结束</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">//   修改后开始</span></span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MyHandler</span> <span class="keyword">extends</span> <span class="title">Handler</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> WeakReference&lt;MainActivity&gt; mActivity;</span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">MyHandler</span><span class="params">(MainActivity activity)</span></span>&#123;</span><br><span class="line">            mActivity = <span class="keyword">new</span> WeakReference&lt;MainActivity&gt;(activity);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> <span class="comment">//   修改后结束</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        loadData();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">loadData</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// ...request</span></span><br><span class="line">        Message message = Message.obtain();</span><br><span class="line">        mHandler.sendMessage(message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>bitmap</strong>：<br>bitmap在android的oom中占据不可替代的角色，所以操作bitmap的时候需要十分的注意了。由于Dalivk并不会主动的去回收，需要开发者在bitmap不被使用的 时候recyle掉，同时对bitmap操作的时候，没有特别需求的时候，最好能做到压缩像素，最后建议大家加载图片的时候，能够使用软引用或者弱引用并进行本地缓存，推荐使用android-universal-imageloader。</p>
+</li>
+<li><strong>cursor</strong>：<br>操作数据库的时，会返回一个cursor，当查询完毕后，需要及时关闭，这样就可以把查询到结果集及时给回收掉。</li>
+<li><strong>页面背景和图片加载</strong>：<br>在布局或者代码中设置背景和图片的时候，如果是纯色的话，尽量使用color，如果是规则图形，尽量使用shape画图，如果稍微复杂点，可以使用9patch图。</li>
+<li><strong>ListView和GridView的item缓存</strong>：<br>在现实列表的时候，页面绘制是个很耗时的操作，所以重用view就显得尤为重要，否则会出现滑动很卡的现象。</li>
+<li><strong>BroadCastRecevier和Service</strong>：<br>绑定广播和服务的时候，一定要在不需要的时候给解绑。</li>
+<li><strong>I/0流</strong>：<br>I/O操作完毕的时候，读写结束一定要关闭</li>
+<li><strong>线程</strong>：<br>线程不再需要继续执行的时候要记得及时关闭，开启线程数量也不要过多，一般和自己机器内核数一样最好，推荐开启线程的时候，使用线程池。</li>
+<li><strong>String/StringBuffer</strong>：<br>当有较多的字符创需要拼接的时候，推荐使用StringBuffer。</li>
+<li><strong>单例</strong>：<br>将context对象保存在单例模式中，instance对象本身持有一个context对象的引用，活动即使被销毁也不能被回收，因此静态变量一直持有它的引用。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppManager</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> AppManager instance;</span><br><span class="line">    <span class="keyword">private</span> Context context;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">AppManager</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">	    <span class="comment">//修改前</span></span><br><span class="line">        <span class="comment">//this.context = context;</span></span><br><span class="line">        <span class="comment">//修改后</span></span><br><span class="line">        <span class="keyword">this</span>.context = context.getApplicationContext();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AppManager <span class="title">getInstance</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance != <span class="keyword">null</span>) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> AppManager(context);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##3.解决工具<br>Memory Monitor 内存监视器<br><img src="./1461412741168.png" alt="Alt text"></p>
+<p>##4.终极建议</p>
+<ul>
+<li>尽量不要让静态变量引用Activity</li>
+<li>使用WeakReference弱引用，会保证GC时会被回收</li>
+<li>使用静态内部类来代替内部类，静态内部类不持有外部类的引用</li>
+<li>静态内部类使用弱引用来引用外部类</li>
+<li>在声明周期结束的时候释放资源</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://zhaotianen.cn/2016/04/23/android/Android之内存管理初窥/" data-id="cj6g5jooq000eet9a4c9r20wy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/23/android/android-checklist/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Android开发过程中注意项(CheckList)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIT/">GIT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IntelliJ-IDEA/">IntelliJ IDEA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 10px;">IntelliJ IDEA</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/04/23/android/Android之内存管理初窥/">Android之内存管理初窥</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/23/android/android-checklist/">Android开发过程中注意项(CheckList)</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/17/android/android-common-technology/">Android无线开发的几种常用技术</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/10/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/10/git/git/">Git使用笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 赵天恩<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
