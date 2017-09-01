@@ -136,7 +136,7 @@
                         
                             <li><a href="/archives/">所有文章</a></li>
                         
-                            <li><a href="/about/">关于我</a></li>
+                            <li><a href="/2017/09/01/about/">关于我</a></li>
                         
                         </ul>
                     </nav>
@@ -158,7 +158,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Github/" style="font-size: 15px;">Github</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 15px;">IntelliJ IDEA</a> <a href="/tags/Node-js/" style="font-size: 15px;">Node.js</a> <a href="/tags/关于我/" style="font-size: 10px;">关于我</a>
+                        <a href="/tags/Android/" style="font-size: 16.67px;">Android</a> <a href="/tags/Android系统源代码情景分析/" style="font-size: 10px;">Android系统源代码情景分析</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/Github/" style="font-size: 13.33px;">Github</a> <a href="/tags/Hadoop权威指南/" style="font-size: 10px;">Hadoop权威指南</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 13.33px;">IntelliJ IDEA</a> <a href="/tags/Java并发编程-核心方法与框架/" style="font-size: 10px;">Java并发编程-核心方法与框架</a> <a href="/tags/Java核心技术-卷1/" style="font-size: 10px;">Java核心技术-卷1</a> <a href="/tags/Java核心技术-卷2/" style="font-size: 10px;">Java核心技术-卷2</a> <a href="/tags/Linux私房菜-基础学习篇/" style="font-size: 10px;">Linux私房菜-基础学习篇</a> <a href="/tags/Node-js/" style="font-size: 13.33px;">Node.js</a> <a href="/tags/RBAC/" style="font-size: 10px;">RBAC</a> <a href="/tags/android/" style="font-size: 16.67px;">android</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/jvm/" style="font-size: 10px;">jvm</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/springBoot/" style="font-size: 10px;">springBoot</a> <a href="/tags/关于我/" style="font-size: 10px;">关于我</a> <a href="/tags/大数据/" style="font-size: 13.33px;">大数据</a> <a href="/tags/大数据之路/" style="font-size: 10px;">大数据之路</a> <a href="/tags/实践Java虚拟机-JVM故障诊断与性能优化/" style="font-size: 10px;">实践Java虚拟机-JVM故障诊断与性能优化</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/架构即未来/" style="font-size: 10px;">架构即未来</a> <a href="/tags/深入实践SpringBoot/" style="font-size: 10px;">深入实践SpringBoot</a> <a href="/tags/深入解析Android5-0系统/" style="font-size: 10px;">深入解析Android5.0系统</a> <a href="/tags/第一行代码/" style="font-size: 10px;">第一行代码</a> <a href="/tags/轻量级JavaEE企业应用实践/" style="font-size: 10px;">轻量级JavaEE企业应用实践</a> <a href="/tags/重构/" style="font-size: 10px;">重构</a> <a href="/tags/高性能MySql/" style="font-size: 10px;">高性能MySql</a>
                     </div>
                 </section>
                 
@@ -211,7 +211,7 @@
                 
                     <li><a href="/archives/">所有文章</a></li>
                 
-                    <li><a href="/about/">关于我</a></li>
+                    <li><a href="/2017/09/01/about/">关于我</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -234,11 +234,81 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-java/rbac/RBAC" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/01/java/rbac/RBAC/" class="article-date">
+      <time datetime="2017-09-01T14:27:11.000Z" itemprop="datePublished">2017-09-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/01/java/rbac/RBAC/">RBAC</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="RBAC介绍"><a href="#RBAC介绍" class="headerlink" title="RBAC介绍"></a>RBAC介绍</h1><h2 id="一、RBAC简介"><a href="#一、RBAC简介" class="headerlink" title="一、RBAC简介"></a>一、RBAC简介</h2><p><strong>RBAC</strong>(<code>Role-Based Access Control</code>)是基于角色的访问控制,在RBAC中，权限与角色进行关联，用户通过成为不同的角色成员，从而用于相对应的角色权限。</p>
+<h2 id="二、RBAC介绍"><a href="#二、RBAC介绍" class="headerlink" title="二、RBAC介绍"></a>二、RBAC介绍</h2><p><strong>RBAC</strong>简单点说，就是<code>WHO</code>,<code>WHAT</code>,<code>HOW</code>三组数据之间关联关系（可能它们之间擦出某种火花），然后由<code>WHO</code>对<code>WHAT</code>进行了<code>HOW</code>的操作。</p>
+<h5 id="WHO：权限的拥有者或主体"><a href="#WHO：权限的拥有者或主体" class="headerlink" title="WHO：权限的拥有者或主体"></a><code>WHO</code>：权限的拥有者或主体</h5><h5 id="WHAT：权限针对的对象或资源"><a href="#WHAT：权限针对的对象或资源" class="headerlink" title="WHAT：权限针对的对象或资源"></a><code>WHAT</code>：权限针对的对象或资源</h5><h5 id="HOW：具体的权限"><a href="#HOW：具体的权限" class="headerlink" title="HOW：具体的权限"></a><code>HOW</code>：具体的权限</h5><blockquote>
+<p>参见详细的介绍：<a href="http://baike.baidu.com/item/RBAC?fr=aladdin" target="_blank" rel="external">百度百科</a> ,<a href="https://zh.wikipedia.org/zh-cn/%E4%BB%A5%E8%A7%92%E8%89%B2%E7%82%BA%E5%9F%BA%E7%A4%8E%E7%9A%84%E5%AD%98%E5%8F%96%E6%8E%A7%E5%88%B6" target="_blank" rel="external">维基百科</a></p>
+</blockquote>
+<h2 id="三、RBAC分类"><a href="#三、RBAC分类" class="headerlink" title="三、RBAC分类"></a>三、RBAC分类</h2><h5 id="RBAC0-组成部分【1-用户-User-，2-角色-Role-，3-许可-Pemission-，4-会话-Session-】"><a href="#RBAC0-组成部分【1-用户-User-，2-角色-Role-，3-许可-Pemission-，4-会话-Session-】" class="headerlink" title="RBAC0:组成部分【1.用户(User)，2.角色(Role)，3.许可(Pemission)，4.会话(Session)】"></a>RBAC0:组成部分【1.用户(User)，2.角色(Role)，3.许可(Pemission)，4.会话(Session)】</h5><h5 id="RBAC1-引入了角色继承概念，从而有了上下级的包含关系"><a href="#RBAC1-引入了角色继承概念，从而有了上下级的包含关系" class="headerlink" title="RBAC1:引入了角色继承概念，从而有了上下级的包含关系"></a>RBAC1:引入了角色继承概念，从而有了上下级的包含关系</h5><h5 id="RBAC2-引入SSD-讲台职责分离-和DSD-动态职责分离"><a href="#RBAC2-引入SSD-讲台职责分离-和DSD-动态职责分离" class="headerlink" title="RBAC2:引入SSD(讲台职责分离)和DSD(动态职责分离)"></a>RBAC2:引入SSD(讲台职责分离)和DSD(动态职责分离)</h5><h5 id="RBAC3-RBAC2-RBAC1"><a href="#RBAC3-RBAC2-RBAC1" class="headerlink" title="RBAC3:RBAC2+ RBAC1"></a>RBAC3:RBAC2+ RBAC1</h5><blockquote>
+<p>总结：</p>
+<h5 id="RBAC0-RBAC的核心思想"><a href="#RBAC0-RBAC的核心思想" class="headerlink" title="RBAC0:RBAC的核心思想"></a>RBAC0:RBAC的核心思想</h5><h5 id="RBAC1-将角色分层模型"><a href="#RBAC1-将角色分层模型" class="headerlink" title="RBAC1:将角色分层模型"></a>RBAC1:将角色分层模型</h5><h5 id="RBAC2-增加约束模型"><a href="#RBAC2-增加约束模型" class="headerlink" title="RBAC2:增加约束模型"></a>RBAC2:增加约束模型</h5><h5 id="RBAC3-RBAC2-RBAC1-1"><a href="#RBAC3-RBAC2-RBAC1-1" class="headerlink" title="RBAC3: RBAC2+ RBAC1"></a>RBAC3: RBAC2+ RBAC1</h5><h2 id="四、完整设计图"><a href="#四、完整设计图" class="headerlink" title="四、完整设计图"></a>四、完整设计图</h2><p><img src="/2017/09/01/java/rbac/RBAC/RBAC.png" alt=""></p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/java/">java</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RBAC/">RBAC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-about" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2017/09/01/about/" class="article-date">
-      <time datetime="2017-09-01T12:43:07.000Z" itemprop="datePublished">2017-09-01</time>
+      <time datetime="2017-09-01T14:24:32.000Z" itemprop="datePublished">2017-09-01</time>
 </a>
     </div>
   
@@ -261,7 +331,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h1 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h1><pre><code>I am a coder.
+1992年生，已婚，有一闺女，坐标江苏苏州，平日没事看看书，逛逛技术博客。
+总结一下：像个傻瓜一样痴迷于技术。
+</code></pre><h1 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h1><pre><code>QQ：909442787
+微信：zte_cly
+邮箱：ztelovecly@gmail.com
+</code></pre><h1 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h1><pre><code>2014.11-2015.06  创元期货股份有限公司
+2015.07-2017.03  苏州犀牛网络科技有限公司
+2017.04-至今      江苏筑牛网络科技有限公司
+</code></pre>
       
     </div>
     
@@ -295,11 +374,11 @@
 
 
   
-    <article id="post-android/Android之内存管理初窥" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-阅读笔记/Linux私房菜-基础学习篇" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/23/android/Android之内存管理初窥/" class="article-date">
-      <time datetime="2016-04-23T12:16:30.000Z" itemprop="datePublished">2016-04-23</time>
+      <a href="/2017/09/01/阅读笔记/Linux私房菜-基础学习篇/" class="article-date">
+      <time datetime="2017-09-01T14:07:51.000Z" itemprop="datePublished">2017-09-01</time>
 </a>
     </div>
   
@@ -312,7 +391,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/23/android/Android之内存管理初窥/">Android之内存管理初窥</a>
+      <a class="article-title" href="/2017/09/01/阅读笔记/Linux私房菜-基础学习篇/">《Linux私房菜-基础学习篇》阅读笔记</a>
     </h1>
   
 
@@ -322,39 +401,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>#Android之内存管理初窥</p>
-<p>##0.前奏<br>相信每个从事android开发的人员来说，都或多或少的遇到过OOM情况的，因此对于每个coder来说能够避免或者防范OOM出现确实是一门必不可少的能力。因此，接下来咱们就谈谈android平台下内存的管理之道。</p>
-<p>##1.概念回顾<br>内存泄漏：<br>指对象在内存heap堆中分配的空间，当不再适用或者没有引用指向的情况下，仍不能被GC正常回收的情况。在android平台下多数出现在代码的不合理下，通常大量的内存泄漏会造成 OOM的出现。</p>
-<p>OOM：<br>即OutOfMemoery，中文也就是内存溢出。内存溢出是指app向系统申请的超过内存最大阀值的内存请求，系统不会再分配多余的空间出来，就会造成OOM ERROR，在android平台下大多数出现在图片处理不当的时候。</p>
-<p>##2.原因分析</p>
-<ul>
-<li><strong>static</strong> ：<br>static是个好东西，声明赋值然后就可以调用，但是伴随而来的就是性能问题。由于static声明变量的生命周期和app的生命周期一样的，有点类似与application。如果大量使用，势必占剧内存空间且不释放，积少成多就会造成内存不断开销，直至挂掉。static的合理使用一般用来修饰基本数据类型或者轻量级对象，尽量避免修复集合或者大对象，常用作修饰全局配置项、工具类方法、内部类。</li>
-<li><strong>无关引用</strong>：<br>在android中很多情况下需要用到传递引用，但是无法确保引用传递出去后能否及时的回收。例如context泄露，但是很多情况下activity结束后，但是由于仍被其他的对象指向导致一直迟迟不能回收，就会导致内存泄漏。</li>
-<li><p><strong>handler</strong>：<br>在做一步操作的时候，相信很多人都会使用handler+thread方式的。handler运行在UI线程，不断处理来自消息队列的消息，如果handler还有消息需要处理，但是activity页面已经结束了，这个时候activity引用其实不会被回收，就会造成内存泄漏。解决方案一是在activity的onDestrory方法中调用handler.removeCallbackAndMessage(null)来取消所有的消息的处理，包括待处理的消息；二是声明handler的内部类为static。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line"> <span class="comment">//	  目前现状开始</span></span><br><span class="line"> <span class="comment">//   private Handler mHandler = new Handler() &#123;</span></span><br><span class="line"> <span class="comment">//       @Override</span></span><br><span class="line"> <span class="comment">//       public void handleMessage(Message msg) &#123;</span></span><br><span class="line"> <span class="comment">//       &#125;</span></span><br><span class="line"> <span class="comment">//   &#125;;</span></span><br><span class="line"> <span class="comment">//   目前现状结束</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">//   修改后开始</span></span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MyHandler</span> <span class="keyword">extends</span> <span class="title">Handler</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> WeakReference&lt;MainActivity&gt; mActivity;</span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">MyHandler</span><span class="params">(MainActivity activity)</span></span>&#123;</span><br><span class="line">            mActivity = <span class="keyword">new</span> WeakReference&lt;MainActivity&gt;(activity);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> <span class="comment">//   修改后结束</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        loadData();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">loadData</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// ...request</span></span><br><span class="line">        Message message = Message.obtain();</span><br><span class="line">        mHandler.sendMessage(message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>bitmap</strong>：<br>bitmap在android的oom中占据不可替代的角色，所以操作bitmap的时候需要十分的注意了。由于Dalivk并不会主动的去回收，需要开发者在bitmap不被使用的 时候recyle掉，同时对bitmap操作的时候，没有特别需求的时候，最好能做到压缩像素，最后建议大家加载图片的时候，能够使用软引用或者弱引用并进行本地缓存，推荐使用android-universal-imageloader。</p>
-</li>
-<li><strong>cursor</strong>：<br>操作数据库的时，会返回一个cursor，当查询完毕后，需要及时关闭，这样就可以把查询到结果集及时给回收掉。</li>
-<li><strong>页面背景和图片加载</strong>：<br>在布局或者代码中设置背景和图片的时候，如果是纯色的话，尽量使用color，如果是规则图形，尽量使用shape画图，如果稍微复杂点，可以使用9patch图。</li>
-<li><strong>ListView和GridView的item缓存</strong>：<br>在现实列表的时候，页面绘制是个很耗时的操作，所以重用view就显得尤为重要，否则会出现滑动很卡的现象。</li>
-<li><strong>BroadCastRecevier和Service</strong>：<br>绑定广播和服务的时候，一定要在不需要的时候给解绑。</li>
-<li><strong>I/0流</strong>：<br>I/O操作完毕的时候，读写结束一定要关闭</li>
-<li><strong>线程</strong>：<br>线程不再需要继续执行的时候要记得及时关闭，开启线程数量也不要过多，一般和自己机器内核数一样最好，推荐开启线程的时候，使用线程池。</li>
-<li><strong>String/StringBuffer</strong>：<br>当有较多的字符创需要拼接的时候，推荐使用StringBuffer。</li>
-<li><strong>单例</strong>：<br>将context对象保存在单例模式中，instance对象本身持有一个context对象的引用，活动即使被销毁也不能被回收，因此静态变量一直持有它的引用。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppManager</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> AppManager instance;</span><br><span class="line">    <span class="keyword">private</span> Context context;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">AppManager</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">	    <span class="comment">//修改前</span></span><br><span class="line">        <span class="comment">//this.context = context;</span></span><br><span class="line">        <span class="comment">//修改后</span></span><br><span class="line">        <span class="keyword">this</span>.context = context.getApplicationContext();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AppManager <span class="title">getInstance</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance != <span class="keyword">null</span>) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> AppManager(context);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>##3.解决工具<br>Memory Monitor 内存监视器<br><img src="./1461412741168.png" alt="Alt text"></p>
-<p>##4.终极建议</p>
-<ul>
-<li>尽量不要让静态变量引用Activity</li>
-<li>使用WeakReference弱引用，会保证GC时会被回收</li>
-<li>使用静态内部类来代替内部类，静态内部类不持有外部类的引用</li>
-<li>静态内部类使用弱引用来引用外部类</li>
-<li>在声明周期结束的时候释放资源</li>
-</ul>
-
+        <pre><code>待完善
+</code></pre>
       
     </div>
     
@@ -362,13 +410,13 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="/categories/linux/">linux</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux私房菜-基础学习篇/">Linux私房菜-基础学习篇</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
     </div>
 
       
@@ -388,11 +436,11 @@
 
 
   
-    <article id="post-android/android-checklist" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-阅读笔记/Java核心技术-卷2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/23/android/android-checklist/" class="article-date">
-      <time datetime="2016-04-23T03:50:30.000Z" itemprop="datePublished">2016-04-23</time>
+      <a href="/2017/09/01/阅读笔记/Java核心技术-卷2/" class="article-date">
+      <time datetime="2017-09-01T14:07:51.000Z" itemprop="datePublished">2017-09-01</time>
 </a>
     </div>
   
@@ -405,7 +453,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/23/android/android-checklist/">Android开发过程中注意项(CheckList)</a>
+      <a class="article-title" href="/2017/09/01/阅读笔记/Java核心技术-卷2/">《Java核心技术-卷2》阅读笔记</a>
     </h1>
   
 
@@ -415,8 +463,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>感谢原作者分享 <a href="https://www.zhihu.com/question/27488517" target="_blank" rel="external">https://www.zhihu.com/question/27488517</a></p>
-
+        <pre><code>待完善
+</code></pre>
       
     </div>
     
@@ -424,13 +472,13 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="/categories/java/">java</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java核心技术-卷2/">Java核心技术-卷2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
     </div>
 
       
@@ -450,11 +498,11 @@
 
 
   
-    <article id="post-android/android-common-technology" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-阅读笔记/实践Java虚拟机-JVM故障诊断与性能优化" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/17/android/android-common-technology/" class="article-date">
-      <time datetime="2016-04-17T13:50:27.000Z" itemprop="datePublished">2016-04-17</time>
+      <a href="/2017/09/01/阅读笔记/实践Java虚拟机-JVM故障诊断与性能优化/" class="article-date">
+      <time datetime="2017-09-01T14:07:51.000Z" itemprop="datePublished">2017-09-01</time>
 </a>
     </div>
   
@@ -467,7 +515,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/17/android/android-common-technology/">Android无线开发的几种常用技术</a>
+      <a class="article-title" href="/2017/09/01/阅读笔记/实践Java虚拟机-JVM故障诊断与性能优化/">《实践Java虚拟机-JVM故障诊断与性能优化》阅读笔记</a>
     </h1>
   
 
@@ -477,38 +525,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>转自<a href="http://www.cnblogs.com/yueqian-scut/p/5347587.html,感谢原作者分享" target="_blank" rel="external">http://www.cnblogs.com/yueqian-scut/p/5347587.html,感谢原作者分享</a></p>
-<ol>
-<li>Multidex</li>
-</ol>
-<p>　　在Dalvik虚拟机所使用的dex文件格式中，用原生类型short来索引文件中的方法数，也就是最多只能有4个字节65536个method，在打包apk的过程中会把工程所需要的全部class文件都合并压缩到一个dex文件中，也就是说自己开发的代码加上外部引用的库的方法总数不能超过65535。</p>
-<p> 　　随着业务逻辑的不断增长，很容易就会超过这个限制，在编译期间就会遇到这样一个错误：</p>
-<p>　　还好google官方给出了一个解决方案Multidex，它会把dex文件拆成两个或多个，第二个dex文件叫classes2.dex，在Application实例化后会从apk中解压出classes2.dex并将其拷贝到应用的目录下，通过反射将其注入到当前的ClassLoader中。但是这个方案非但不能解决一切问题也不能直接拿来用，而要加入自己的一些改造，来解决NoClassDefFoundError、INSTALL_FAILED_DEXOPT等问题，以保证自己的dex被顺利的加载流畅的执行。</p>
-<ol>
-<li>Plugin</li>
-</ol>
-<p>　　Multidex虽然可以解决方法数的限制，但随着业务逻辑越来越多，apk的大小也变得越来越多，而且有一些功能并非全部用户都想用的，所以会把一些功能模块独立出来做成插件，让用户可以按需下载更新，这样既减小了包大小，又改善了用户体验。</p>
-<p>　　插件类似于windows的dll文件，放在某个特定目录，应用程序主框架会用LoadLibrary加载各dll文件，按插件接口去访问插件。Android的插件技术也是这样，利用一个进程可以运行多个apk的机制，用ClassLoader将宿主apk之外的类加载进来，插件的context可以通过createPackageContext方法创建。因为插件中的activity，service等组件如果没有在AndroidManifest.xml中声明将不能运行，所以需要预先在AndroidManifest.xml中声明一个代理类（ProxyActivity），将这个ProxyActivity传给插件，让插件的activity也有访问资源的能力。</p>
-<ol>
-<li>Hot Patch</li>
-</ol>
-<p>　　有时一些严重的crash bug或漏洞需要紧急修复，但有些用户不会或不愿意立即升级，而且频繁升级，没有特别的功能更新只是修复bug的升级，对活跃用户是一种伤害。热补丁就可以解决这样的窘境，它是一种可以线上修复的技术方案，有动态改变方法的能力，一般大型的移动应用都会使用热补丁来处理紧急事件。</p>
-<p>　　Hot Patch可以通过hook来修改java的method，注入自己的代码，实现非侵入式的runtime修改，或者采用正向编程，通过工具生成patch文件，通过jni bridge指向补丁文件中的方法。还有就是利用ClassLoader，在dex中查找class时，如果找到类则返回，找不到就从下一个dex文件中继续查找，由此可以想到，在把问题修复后，可以单独生成一个dex，通过反射插入到dexElements数组的最前面，这样就能让dalvik加载补丁里的类了。</p>
-<ol>
-<li>Push通道</li>
-</ol>
-<p>　　Push是移动App常用的一种无线技术，基础是基于TCP的心跳机制，和客户端维持一个长连接。用处是向客户端推送消息，或者代替客户端定时去从服务器pull的策略，改为客户端接收到push消息后再去pull。</p>
-<p>　　如果每个应用都自己实现push通道的话，cpu就会不定时地经常被唤醒，耗电量达到难以容忍的程度，而且自己搭建push平台的成本也很大，实时性和效率也存在问题，一般都直接使用一些服务商提供的push方案，这些push平台一般都经过了优化设计，在跨平台和网络穿透性、长连接心跳包、多客户端App链路复用、服务和连接保活等技术上做了优化。比如Agoo最初是淘宝无线事业部开发的push服务，在逐渐完善和支撑淘系其他app后，通过服务端容量、通讯协议优化、业务和开放能力的拓展改进后，与友盟等合作，开始向第三方提供推送服务。</p>
-<ol>
-<li>应用加固</li>
-</ol>
-<p>　　一款热门的移动app或游戏发布后会受到很多的关注，经常会遇到二次打包的盗版行为，破解者要么修改游戏的资源文件、道具、分值甚至直接把访问的站点指向自己架设的服务器，损害了开发者的利益；要么偷偷植入自己的恶意代码，表面上看起来跟正版的app完全一样，在后台却盗取用户隐私，植入木马；要么通过反向工程学习原app的核心技术，打破技术上的竞争壁垒。</p>
-<p>　　为了防止被破解只通过混淆是远远不够的，即使是在native层混淆也还是会被人熟练的反编译，所以需要一套对apk的保护方案来反调试、防逆向和防篡改。一般的加固方法都是对原apk先进行加密，然后和壳合并生成新的apk。壳是用来解密apk的dex文件。当应用启动时，壳先解密原apk，准备好自己定义的ClassLoader，然后获取源程序中的Application名称，通过反射找到正确的Application对象，运行它的onCreate方法，这样原apk才能被真正运行。其他一些反调试的方法有针对反编译工具，在源程序中加入一些无效的指令或无效的指针，引发反编译工具的崩溃，还有就是加花指令，利用一些跳转，堆栈操作等指令，让破解者无法清楚地理解反汇编后的内容。</p>
-<ol>
-<li>其他</li>
-</ol>
-<p>　　除了上述几点外，在服务端还会涉及灰度策略、链路流量优化、动态更新配置、防DNS劫持等技术，在客户端会涉及用户埋点上报、在线监控、进程保活、H5和native混合开发、注入框架等。</p>
-
+        <pre><code>待完善
+</code></pre>
       
     </div>
     
@@ -516,13 +534,13 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="/categories/java/">java</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm/">jvm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/实践Java虚拟机-JVM故障诊断与性能优化/">实践Java虚拟机-JVM故障诊断与性能优化</a></li></ul>
     </div>
 
       
@@ -542,11 +560,11 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-阅读笔记/大数据之路-阿里巴巴大数据实践" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/10/hello-world/" class="article-date">
-      <time datetime="2016-04-10T06:50:27.000Z" itemprop="datePublished">2016-04-10</time>
+      <a href="/2017/09/01/阅读笔记/大数据之路-阿里巴巴大数据实践/" class="article-date">
+      <time datetime="2017-09-01T14:07:51.000Z" itemprop="datePublished">2017-09-01</time>
 </a>
     </div>
   
@@ -559,7 +577,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/10/hello-world/">Hello World</a>
+      <a class="article-title" href="/2017/09/01/阅读笔记/大数据之路-阿里巴巴大数据实践/">《大数据之路》阅读笔记</a>
     </h1>
   
 
@@ -569,16 +587,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+        <pre><code>待完善
+</code></pre>
       
     </div>
     
@@ -586,13 +596,13 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+    <a class="article-category-link" href="/categories/大数据/">大数据</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IntelliJ-IDEA/">IntelliJ IDEA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大数据/">大数据</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大数据之路/">大数据之路</a></li></ul>
     </div>
 
       
@@ -612,11 +622,11 @@
 
 
   
-    <article id="post-git/git" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-阅读笔记/Java核心技术-卷1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/10/git/git/" class="article-date">
-      <time datetime="2016-04-10T06:50:27.000Z" itemprop="datePublished">2016-04-10</time>
+      <a href="/2017/09/01/阅读笔记/Java核心技术-卷1/" class="article-date">
+      <time datetime="2017-09-01T14:07:51.000Z" itemprop="datePublished">2017-09-01</time>
 </a>
     </div>
   
@@ -629,7 +639,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/10/git/git/">Git使用笔记</a>
+      <a class="article-title" href="/2017/09/01/阅读笔记/Java核心技术-卷1/">《Java核心技术-卷1》阅读笔记</a>
     </h1>
   
 
@@ -639,8 +649,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">git branch 查看本地所有分支</span><br><span class="line">git status 查看当前状态</span><br><span class="line">git commit 提交</span><br><span class="line">git branch -a 查看所有的分支</span><br><span class="line">git branch -r 查看本地所有分支</span><br><span class="line">git commit -am &quot;init&quot; 提交并且加注释</span><br><span class="line">git remote add origin git@192.168.1.119:zhaotianen</span><br><span class="line">git push origin master 将文件给推到服务器上</span><br><span class="line">git remote show origin 显示远程库origin里的资源</span><br><span class="line">git push origin master:develop</span><br><span class="line">git push origin master:hb-dev 将本地库与服务器上的库进行关联</span><br><span class="line">git checkout --track origin/dev 切换到远程dev分支</span><br><span class="line">git branch -D master develop 删除本地库develop</span><br><span class="line">git checkout -b dev 建立一个新的本地分支dev</span><br><span class="line">git merge origin/dev 将分支dev与当前分支进行合并</span><br><span class="line">git checkout dev 切换到本地dev分支</span><br><span class="line">git remote show 查看远程库</span><br><span class="line">git add .</span><br><span class="line">git rm 文件名(包括路径) 从git中删除指定文件</span><br><span class="line">git clone git://github.com/schacon/grit.git 从服务器上将代码给拉下来</span><br><span class="line">git config --list 看所有用户</span><br><span class="line">git ls-files 看已经被提交的</span><br><span class="line">git rm [file name] 删除一个文件</span><br><span class="line">git commit -a 提交当前repos的所有的改变</span><br><span class="line">git add [file name] 添加一个文件到git index</span><br><span class="line">git commit -v 当你用－v参数的时候可以看commit的差异</span><br><span class="line">git commit -m &quot;This is the message describing the commit&quot; 添加commit信息</span><br><span class="line">git commit -a -a是代表add，把所有的change加到git index里然后再commit</span><br><span class="line">git commit -a -v 一般提交命令</span><br><span class="line">git log 看你commit的日志</span><br><span class="line">git diff 查看尚未暂存的更新</span><br><span class="line">git rm a.a 移除文件(从暂存区和工作区中删除)</span><br><span class="line">git rm --cached a.a 移除文件(只从暂存区中删除)</span><br><span class="line">git commit -m &quot;remove&quot; 移除文件(从Git中删除)</span><br><span class="line">git rm -f a.a 强行移除修改后文件(从暂存区和工作区中删除)</span><br><span class="line">git diff --cached 或 $ git diff --staged 查看尚未提交的更新</span><br><span class="line">git stash push 将文件给push到一个临时空间中</span><br><span class="line">git stash pop 将文件从临时空间pop下来</span><br><span class="line">git remote add origin git@github.com:username/Hello-World.git</span><br><span class="line">git push origin master 将本地项目给提交到服务器中</span><br><span class="line">git pull 本地与服务器端同步</span><br><span class="line">git push (远程仓库名) (分支名) 将本地分支推送到服务器上去。</span><br><span class="line">git push origin serverfix:awesomebranch</span><br><span class="line">git fetch 相当于是从远程获取最新版本到本地，不会自动merge</span><br><span class="line">git commit -a -m &quot;log_message&quot; (-a是提交所有改动，-m是加入log信息) 本地修改同步至服务器端 ：</span><br><span class="line">git branch branch_0.1 master 从主分支master创建branch_0.1分支</span><br><span class="line">git branch -m branch_0.1 branch_1.0 将branch_0.1重命名为branch_1.0</span><br><span class="line">git checkout branch_1.0/master 切换到branch_1.0/master分支</span><br></pre></td></tr></table></figure>
-
+        <pre><code>待完善
+</code></pre>
       
     </div>
     
@@ -648,13 +658,13 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/GIT/">GIT</a>
+    <a class="article-category-link" href="/categories/java/">java</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IntelliJ-IDEA/">IntelliJ IDEA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java核心技术-卷1/">Java核心技术-卷1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
     </div>
 
       
@@ -674,6 +684,196 @@
 
 
   
+    <article id="post-阅读笔记/Android系统源代码情景分析" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/01/阅读笔记/Android系统源代码情景分析/" class="article-date">
+      <time datetime="2017-09-01T14:07:51.000Z" itemprop="datePublished">2017-09-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/01/阅读笔记/Android系统源代码情景分析/">《Android系统源代码情景分析》阅读笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <pre><code>待完善
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/android/">android</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android系统源代码情景分析/">Android系统源代码情景分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-阅读笔记/Hadoop权威指南" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/01/阅读笔记/Hadoop权威指南/" class="article-date">
+      <time datetime="2017-09-01T14:07:51.000Z" itemprop="datePublished">2017-09-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/01/阅读笔记/Hadoop权威指南/">《Hadoop权威指南》阅读笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <pre><code>待完善
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/大数据/">大数据</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hadoop权威指南/">Hadoop权威指南</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大数据/">大数据</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-阅读笔记/Java并发编程-核心方法与框架" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/01/阅读笔记/Java并发编程-核心方法与框架/" class="article-date">
+      <time datetime="2017-09-01T14:07:51.000Z" itemprop="datePublished">2017-09-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/01/阅读笔记/Java并发编程-核心方法与框架/">《Java并发编程-核心方法与框架》阅读笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <pre><code>待完善
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/java/">java</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java并发编程-核心方法与框架/">Java并发编程-核心方法与框架</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
