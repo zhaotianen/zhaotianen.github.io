@@ -3,30 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Android无线开发的几种常用技术 | 赵天恩博客</title>
+  <title>关于我 | 赵天恩博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="转自http://www.cnblogs.com/yueqian-scut/p/5347587.html,感谢原作者分享
-
-Multidex
-
-　　在Dalvik虚拟机所使用的dex文件格式中，用原生类型short来索引文件中的方法数，也就是最多只能有4个字节65536个method，在打包apk的过程中会把工程所需要的全部class文件都合并压缩到一个dex文件中，也就是说自己开发的代码加上外部">
+  <meta name="description" content="赵天恩博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android无线开发的几种常用技术">
-<meta property="og:url" content="http://zhaotianen.github.io/2016/04/17/android/android-common-technology/index.html">
+<meta property="og:title" content="关于我">
+<meta property="og:url" content="http://zhaotianen.github.io/2017/09/01/about/index.html">
 <meta property="og:site_name" content="赵天恩博客">
-<meta property="og:description" content="转自http://www.cnblogs.com/yueqian-scut/p/5347587.html,感谢原作者分享
-
-Multidex
-
-　　在Dalvik虚拟机所使用的dex文件格式中，用原生类型short来索引文件中的方法数，也就是最多只能有4个字节65536个method，在打包apk的过程中会把工程所需要的全部class文件都合并压缩到一个dex文件中，也就是说自己开发的代码加上外部">
-<meta property="og:updated_time" content="2016-04-17T13:51:27.000Z">
+<meta property="og:description" content="赵天恩博客">
+<meta property="og:updated_time" content="2017-09-01T12:43:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android无线开发的几种常用技术">
-<meta name="twitter:description" content="转自http://www.cnblogs.com/yueqian-scut/p/5347587.html,感谢原作者分享
-
-Multidex
-
-　　在Dalvik虚拟机所使用的dex文件格式中，用原生类型short来索引文件中的方法数，也就是最多只能有4个字节65536个method，在打包apk的过程中会把工程所需要的全部class文件都合并压缩到一个dex文件中，也就是说自己开发的代码加上外部">
+<meta name="twitter:title" content="关于我">
+<meta name="twitter:description" content="赵天恩博客">
   
     <link rel="alternative" href="/atom.xml" title="赵天恩博客" type="application/atom+xml">
   
@@ -240,11 +228,11 @@ Multidex
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-android/android-common-technology" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-about" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/17/android/android-common-technology/" class="article-date">
-      <time datetime="2016-04-17T13:50:27.000Z" itemprop="datePublished">2016-04-17</time>
+      <a href="/2017/09/01/about/" class="article-date">
+      <time datetime="2017-09-01T12:43:07.000Z" itemprop="datePublished">2017-09-01</time>
 </a>
     </div>
   
@@ -257,7 +245,7 @@ Multidex
         
   
     <h1 class="article-title" itemprop="name">
-      Android无线开发的几种常用技术
+      关于我
     </h1>
   
 
@@ -266,13 +254,13 @@ Multidex
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="/categories/关于我/">关于我</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/关于我/">关于我</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -282,38 +270,7 @@ Multidex
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>转自<a href="http://www.cnblogs.com/yueqian-scut/p/5347587.html,感谢原作者分享" target="_blank" rel="external">http://www.cnblogs.com/yueqian-scut/p/5347587.html,感谢原作者分享</a></p>
-<ol>
-<li>Multidex</li>
-</ol>
-<p>　　在Dalvik虚拟机所使用的dex文件格式中，用原生类型short来索引文件中的方法数，也就是最多只能有4个字节65536个method，在打包apk的过程中会把工程所需要的全部class文件都合并压缩到一个dex文件中，也就是说自己开发的代码加上外部引用的库的方法总数不能超过65535。</p>
-<p> 　　随着业务逻辑的不断增长，很容易就会超过这个限制，在编译期间就会遇到这样一个错误：</p>
-<p>　　还好google官方给出了一个解决方案Multidex，它会把dex文件拆成两个或多个，第二个dex文件叫classes2.dex，在Application实例化后会从apk中解压出classes2.dex并将其拷贝到应用的目录下，通过反射将其注入到当前的ClassLoader中。但是这个方案非但不能解决一切问题也不能直接拿来用，而要加入自己的一些改造，来解决NoClassDefFoundError、INSTALL_FAILED_DEXOPT等问题，以保证自己的dex被顺利的加载流畅的执行。</p>
-<ol>
-<li>Plugin</li>
-</ol>
-<p>　　Multidex虽然可以解决方法数的限制，但随着业务逻辑越来越多，apk的大小也变得越来越多，而且有一些功能并非全部用户都想用的，所以会把一些功能模块独立出来做成插件，让用户可以按需下载更新，这样既减小了包大小，又改善了用户体验。</p>
-<p>　　插件类似于windows的dll文件，放在某个特定目录，应用程序主框架会用LoadLibrary加载各dll文件，按插件接口去访问插件。Android的插件技术也是这样，利用一个进程可以运行多个apk的机制，用ClassLoader将宿主apk之外的类加载进来，插件的context可以通过createPackageContext方法创建。因为插件中的activity，service等组件如果没有在AndroidManifest.xml中声明将不能运行，所以需要预先在AndroidManifest.xml中声明一个代理类（ProxyActivity），将这个ProxyActivity传给插件，让插件的activity也有访问资源的能力。</p>
-<ol>
-<li>Hot Patch</li>
-</ol>
-<p>　　有时一些严重的crash bug或漏洞需要紧急修复，但有些用户不会或不愿意立即升级，而且频繁升级，没有特别的功能更新只是修复bug的升级，对活跃用户是一种伤害。热补丁就可以解决这样的窘境，它是一种可以线上修复的技术方案，有动态改变方法的能力，一般大型的移动应用都会使用热补丁来处理紧急事件。</p>
-<p>　　Hot Patch可以通过hook来修改java的method，注入自己的代码，实现非侵入式的runtime修改，或者采用正向编程，通过工具生成patch文件，通过jni bridge指向补丁文件中的方法。还有就是利用ClassLoader，在dex中查找class时，如果找到类则返回，找不到就从下一个dex文件中继续查找，由此可以想到，在把问题修复后，可以单独生成一个dex，通过反射插入到dexElements数组的最前面，这样就能让dalvik加载补丁里的类了。</p>
-<ol>
-<li>Push通道</li>
-</ol>
-<p>　　Push是移动App常用的一种无线技术，基础是基于TCP的心跳机制，和客户端维持一个长连接。用处是向客户端推送消息，或者代替客户端定时去从服务器pull的策略，改为客户端接收到push消息后再去pull。</p>
-<p>　　如果每个应用都自己实现push通道的话，cpu就会不定时地经常被唤醒，耗电量达到难以容忍的程度，而且自己搭建push平台的成本也很大，实时性和效率也存在问题，一般都直接使用一些服务商提供的push方案，这些push平台一般都经过了优化设计，在跨平台和网络穿透性、长连接心跳包、多客户端App链路复用、服务和连接保活等技术上做了优化。比如Agoo最初是淘宝无线事业部开发的push服务，在逐渐完善和支撑淘系其他app后，通过服务端容量、通讯协议优化、业务和开放能力的拓展改进后，与友盟等合作，开始向第三方提供推送服务。</p>
-<ol>
-<li>应用加固</li>
-</ol>
-<p>　　一款热门的移动app或游戏发布后会受到很多的关注，经常会遇到二次打包的盗版行为，破解者要么修改游戏的资源文件、道具、分值甚至直接把访问的站点指向自己架设的服务器，损害了开发者的利益；要么偷偷植入自己的恶意代码，表面上看起来跟正版的app完全一样，在后台却盗取用户隐私，植入木马；要么通过反向工程学习原app的核心技术，打破技术上的竞争壁垒。</p>
-<p>　　为了防止被破解只通过混淆是远远不够的，即使是在native层混淆也还是会被人熟练的反编译，所以需要一套对apk的保护方案来反调试、防逆向和防篡改。一般的加固方法都是对原apk先进行加密，然后和壳合并生成新的apk。壳是用来解密apk的dex文件。当应用启动时，壳先解密原apk，准备好自己定义的ClassLoader，然后获取源程序中的Application名称，通过反射找到正确的Application对象，运行它的onCreate方法，这样原apk才能被真正运行。其他一些反调试的方法有针对反编译工具，在源程序中加入一些无效的指令或无效的指针，引发反编译工具的崩溃，还有就是加花指令，利用一些跳转，堆栈操作等指令，让破解者无法清楚地理解反汇编后的内容。</p>
-<ol>
-<li>其他</li>
-</ol>
-<p>　　除了上述几点外，在服务端还会涉及灰度策略、链路流量优化、动态更新配置、防DNS劫持等技术，在客户端会涉及用户埋点上报、在线监控、进程保活、H5和native混合开发、注入框架等。</p>
-
+        
       
     </div>
     
@@ -321,13 +278,13 @@ Multidex
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/04/17/android/android-common-technology/">Android无线开发的几种常用技术</a></p>
+        <p><span>本文标题:</span><a href="/2017/09/01/about/">关于我</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">赵天恩</a></p>
-        <p><span>发布时间:</span>2016-04-17, 21:50:27</p>
-        <p><span>最后更新:</span>2016-04-17, 21:51:27</p>
+        <p><span>发布时间:</span>2017-09-01, 20:43:07</p>
+        <p><span>最后更新:</span>2017-09-01, 20:43:07</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/04/17/android/android-common-technology/" title="Android无线开发的几种常用技术">http://zhaotianen.github.io/2016/04/17/android/android-common-technology/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://zhaotianen.github.io/2016/04/17/android/android-common-technology/　　作者: 赵天恩" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/01/about/" title="关于我">http://zhaotianen.github.io/2017/09/01/about/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://zhaotianen.github.io/2017/09/01/about/　　作者: 赵天恩" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -340,16 +297,10 @@ Multidex
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/04/23/android/android-checklist/">
-                    Android开发过程中注意项(CheckList)
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/04/10/hello-world/">
-                    Hello World
+                <a href="/2016/04/23/android/Android之内存管理初窥/">
+                    Android之内存管理初窥
                 </a>
             </div>
         
@@ -417,7 +368,7 @@ Multidex
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Android无线开发的几种常用技术　| 赵天恩博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"关于我　| 赵天恩博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -437,15 +388,13 @@ Multidex
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/04/23/android/android-checklist/" title="上一篇: Android开发过程中注意项(CheckList)">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/04/10/hello-world/" title="下一篇: Hello World">
+            <a href="/2016/04/23/android/Android之内存管理初窥/" title="下一篇: Android之内存管理初窥">
                 <i class="fa fa-angle-right"></i>
             </a>
         
